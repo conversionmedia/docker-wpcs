@@ -1,0 +1,4 @@
+#!/bin/bash
+
+DIR=$(dirname "$3")
+docker run --rm -v /private$DIR:$DIR -w / conversionmedia/wpcs phpcs $@
