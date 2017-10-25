@@ -1,11 +1,26 @@
 # docker-wpcs
 Dockerised PHP CodeSniffer with WordPress Coding Standards.
 
-## xdebug
-Xdebug connect to the remote host under the IP address 10.254.254.254.
-
-Add this loopback alias to connect on MAC OS X:
-
+## Use with SublimeLinter3 on Mac OS X
+Copy the files `phpcbf`, `phpcs` and `phpmd` to `/usr/local/bin`.
+Specify the executable in the settings:
 ```
-sudo ifconfig en0 alias 10.254.254.254 255.255.255.0
+{
+	"SublimeLinter": {
+		...
+		"linters": {
+			"phpcs": {
+				...
+				"cmd": "/usr/local/bin/phpcs",
+				...
+			},
+			"phpmd": {
+				...
+				"cmd": "/usr/local/bin/phpmd",
+				...
+			}
+		},
+		...
+	}
+}
 ```
